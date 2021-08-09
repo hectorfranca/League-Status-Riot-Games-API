@@ -1,0 +1,49 @@
+doctype html
+html(lang="pt-br")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/public/styles/header.css")
+        link(rel="stylesheet", href="/public/styles/footer.css")
+        link(rel="stylesheet", href="/public/styles/default.css")
+        link(rel="stylesheet", href="/public/styles/summonerData.css")
+        title League Status
+    body 
+        header
+            a(href="/").header__logo LEAGUE STATUS
+            form(method="POST", action="/playerResume").header__form
+                input(type="text", name="name", placeholder="Summoner Name" value=`${summoner.name}` required).form__name
+                select(name="region").form__region
+                    - let regions = {BR: "br1", EUNE: "eun1", EUW: "euw1", JP: "jp1", KR: "kr", LAN: "la1", LAS: "la2", NA: "na1", OCE: "oc1", RU: "ru", TR: "tr1"}
+                    each val, key in regions
+                        if val === summonerRegion
+                            option(value=val selected)= key
+                        else 
+                            option(value=val)= key
+                input(type="submit" value=" ").form__submit
+        main
+            section.profile
+                img(src=`http://ddragon.leagueoflegends.com/cdn/11.15.1/img/profileicon/${summoner.profileIconId}.png`).profile__img
+                div.profile__level= `${summoner.summonerLevel}`
+                div.profile__name= `${summoner.name}`
+                div.profile__solo
+                    div.solo__title Solo / Duo
+                    if hasRankSolo
+                        img(src=`/public/img/${summoner.solo.tier.toLowerCase()}_tier.png`).rank__img
+                        div.solo__rank= `${summoner.solo.tier} ${summoner.solo.rank}`
+                        div.solo__status= `Points: ${summoner.solo.leaguePoints} (W: ${summoner.solo.wins}/L: ${summoner.solo.losses})`
+                    else
+                        img(src="/public/img/unranked.png").rank__img
+                        div.solo__rank Unranked
+                div.profile__flex
+                    div.flex__title Flex
+                    if hasRankFlex
+                        img(src=`/public/img/${summoner.flex.tier.toLowerCase()}_tier.png`).rank__img
+                        div.flex__rank= `${summoner.flex.tier} ${summoner.flex.rank}`
+                        div.flex__status= `Points: ${summoner.flex.leaguePoints} (W: ${summoner.flex.wins}/L: ${summoner.flex.losses})` 
+                    else 
+                        img(src="/public/img/unranked.png").rank__img
+                        div.flex__rank Unranked
+        footer
+            include footer.pug

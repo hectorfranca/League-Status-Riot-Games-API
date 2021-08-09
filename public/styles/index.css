@@ -1,0 +1,20 @@
+.main__content {
+    width: 90%;
+    margin: auto;
+    padding-top: 40px;
+}
+.content__title {
+    font-size: 20px;
+    color: #848484;
+}
+.content__text {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 100;
+    color: #535473;
+}
+@media only screen and (min-width: 600px) {
+    .content__text {
+        font-size: 18px;
+    }
+}

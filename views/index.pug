@@ -1,0 +1,38 @@
+doctype html
+html(lang="pt-br")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/public/styles/header.css")
+        link(rel="stylesheet", href="/public/styles/footer.css")
+        link(rel="stylesheet", href="/public/styles/default.css")
+        link(rel="stylesheet", href="/public/styles/index.css")
+        title League Status
+    body 
+        header
+            a(href="/").header__logo LEAGUE STATUS
+            form(method="POST", action="/playerResume").header__form
+                input(type="text", name="name", placeholder="Summoner Name" required).form__name
+                select(name="region").form__region
+                    option(value="br1") BR
+                    option(value="eun1") EUNE
+                    option(value="euw1") EUW
+                    option(value="jp1") JP
+                    option(value="kr") KR
+                    option(value="la1") LAN
+                    option(value="la2") LAS
+                    option(value="na1") NA
+                    option(value="oc1") OCE
+                    option(value="ru") RU
+                    option(value="tr1") TR
+                input(type="submit" value=" ").form__submit
+        main
+            section.main__content
+                if !notFound
+                    h3.content__title Search Summoner Profiles
+                    p.content__text Take a look at our summoner search system and check how your friends are doing in the ranked ranks.
+                else
+                    h3.content__title= `${notFound_message}`
+        footer
+            include footer.pug

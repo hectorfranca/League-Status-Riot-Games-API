@@ -1,0 +1,87 @@
+header {
+    height: 213px;
+    background-image: url("../img/star_guardian.png"); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: 0px 5px 5px #cacaca;
+}
+.header__logo {
+    width: fit-content;
+    padding: 25px;
+    font-size: 22px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.header__form {
+    align-self: center;
+    margin-bottom: 30px;
+}
+input, select {
+    height: 37px;
+    border-radius: 2px;
+}
+.form__name {
+    width: 150px;
+    text-indent: 5px;
+    margin-right: 1px;
+    color: #5e5e5e;
+    -webkit-box-shadow: 0 0 0 30px #FFFFFF inset !important;
+}
+::placeholder {
+    text-indent: 5px;
+    font-size: 13px;
+    color: #A0A0A0;
+}
+.form__region {
+    width: 73px;
+    font-size: 13px;
+    margin-right: 1px;
+    padding-left: 8px;
+    background-color: #FFFFFF;
+    background-image: url("../img/arrow_dropdown.png"); 
+    background-size: 10px;
+    background-position: 75% center;
+    background-repeat: no-repeat;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.form__region::-ms-expand {
+    display: none;
+}
+.form__submit {
+    width: 48px;
+    background-color: #615CF2;
+    background-image: url("../img/magnifier.png");
+    background-size: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.form__name:hover, .form__region:hover, .form__submit:hover {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0.5px solid #cacaca;
+}
+@media only screen and (min-width: 600px) {
+    .form__name {
+        height: 40px;
+        width: 350px;
+        font-size: 15px;
+        text-indent: 10px;
+    }
+    .form__region {
+        width: 80px;
+        font-size: 15px;
+    }
+    ::placeholder {
+        font-size: 15px;
+        text-indent: 10px;
+    }
+    input:focus, select:focus {
+        outline: 1px solid #615CF2;
+    }
+}

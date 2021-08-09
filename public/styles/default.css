@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    vertical-align: baseline;
+    list-style: none;
+    border: 0
+}
+body {
+    background-image: linear-gradient(#FFFFFF, #EDEDED);
+}
+body, input, select {
+    font-family: 'Ovo', serif;
+    font-weight: bold;
+    color: #A0A0A0;
+}

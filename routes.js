@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const axios = require('axios');
 const pug = require('pug');
@@ -22,7 +24,7 @@ app.post("/playerResume", async (req, res) => {
         endPoint: "api.riotgames.com/lol/summoner/v4/summoners/by-name",
         region: "",
         summoner: "",
-        key: "RGAPI-d5435d98-d0cf-4116-b974-6bfdda873548"
+        key = process.env.API_KEY
     }
     
     const summoner = {

@@ -4,6 +4,10 @@ html(lang="pt-br")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="author", content="Héctor França")
+        meta(name="description", content="Search summoner profile / Pesquise o perfil de invocador")
+        meta(name="keywords", content="Summoner profile, LoL, League of Legends, Riot, Riot Games, League Status, Perfil de invocador")
+        link(rel="icon", href="/public/img/riot_icon.png", type="image/png")
         link(rel="stylesheet", href="/public/styles/header.css")
         link(rel="stylesheet", href="/public/styles/footer.css")
         link(rel="stylesheet", href="/public/styles/default.css")
@@ -13,15 +17,15 @@ html(lang="pt-br")
         header
             a(href="/").header__logo LEAGUE STATUS
             form(method="POST", action="/playerResume").header__form
-                input(type="text", name="name", placeholder="Summoner Name" value=`${summoner.name}` required).form__name
+                input(type="text", name="name", placeholder="Summoner Name", value=`${summoner.name}`, required).form__name
                 select(name="region").form__region
                     - let regions = {BR: "br1", EUNE: "eun1", EUW: "euw1", JP: "jp1", KR: "kr", LAN: "la1", LAS: "la2", NA: "na1", OCE: "oc1", RU: "ru", TR: "tr1"}
                     each val, key in regions
                         if val === summonerRegion
-                            option(value=val selected)= key
+                            option(value=val, selected)= key
                         else 
                             option(value=val)= key
-                input(type="submit" value=" ").form__submit
+                input(type="submit", value=" ").form__submit
         main
             section.profile
                 img(src=`http://ddragon.leagueoflegends.com/cdn/11.15.1/img/profileicon/${summoner.profileIconId}.png`).profile__img

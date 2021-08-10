@@ -4,6 +4,10 @@ html(lang="pt-br")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="author", content="Héctor França")
+        meta(name="description", content="Search summoner profile / Pesquise o perfil de invocador")
+        meta(name="keywords", content="Summoner profile, LoL, League of Legends, Riot, Riot Games, League Status, Perfil de invocador")
+        link(rel="icon", href="/public/img/riot_icon.png", type="image/png")
         link(rel="stylesheet", href="/public/styles/header.css")
         link(rel="stylesheet", href="/public/styles/footer.css")
         link(rel="stylesheet", href="/public/styles/default.css")
@@ -13,7 +17,7 @@ html(lang="pt-br")
         header
             a(href="/").header__logo LEAGUE STATUS
             form(method="POST", action="/playerResume").header__form
-                input(type="text", name="name", placeholder="Summoner Name" required).form__name
+                input(type="text", name="name", placeholder="Summoner Name", required).form__name
                 select(name="region").form__region
                     option(value="br1") BR
                     option(value="eun1") EUNE
@@ -26,7 +30,7 @@ html(lang="pt-br")
                     option(value="oc1") OCE
                     option(value="ru") RU
                     option(value="tr1") TR
-                input(type="submit" value=" ").form__submit
+                input(type="submit", value=" ").form__submit
         main
             section.main__content
                 if !notFound

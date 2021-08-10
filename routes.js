@@ -22,7 +22,7 @@ app.post("/playerResume", async (req, res) => {
         endPoint: "api.riotgames.com/lol/summoner/v4/summoners/by-name",
         region: "",
         summoner: "",
-        key: "RGAPI-51a8311c-a124-42ce-868c-d09ed6525f31"
+        key: "RGAPI-d5435d98-d0cf-4116-b974-6bfdda873548"
     }
     
     const summoner = {

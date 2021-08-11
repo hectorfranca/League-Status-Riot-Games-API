@@ -24,7 +24,7 @@ app.post("/playerResume", async (req, res) => {
         endPoint: "api.riotgames.com/lol/summoner/v4/summoners/by-name",
         region: "",
         summoner: "",
-        key = process.env.API_KEY
+        key: process.env.API_KEY
     }
     
     const summoner = {

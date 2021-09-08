@@ -68,7 +68,6 @@ input, select {
 }
 @media only screen and (min-width: 600px) {
     .form__name {
-        height: 40px;
         width: 350px;
         font-size: 15px;
         text-indent: 10px;
